@@ -88,6 +88,11 @@ This command:
 
 # Step 4: Verify the Cluster
 
+kubectl cluster-info    ← Verify the control plane is reachable
+
+kubectl cluster-info is one of the first commands you should run after starting Minikube.
+It displays information about the Kubernetes cluster that kubectl is currently connected to.
+
 Check whether the node is running:
 
 ```bash
@@ -242,6 +247,10 @@ Start cluster:
 ```bash
 minikube start --driver=docker
 ```
+
+-----
+kubectl cluster-info    ← Verify the control plane is reachable
+----
 
 Check nodes:
 
