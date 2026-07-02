@@ -1,0 +1,280 @@
+# Kubernetes Installation & First Deployment Notes
+
+# Prerequisites
+
+To work with Kubernetes locally, you need two things:
+
+1. **kubectl** – the command-line tool used to communicate with the Kubernetes API server.
+2. **Minikube** – creates a local Kubernetes cluster for learning and testing.
+
+---
+
+# Step 1: Install kubectl
+
+`kubectl` is the CLI (Command Line Interface) used to send commands to a Kubernetes cluster.
+
+Flow:
+
+```text
+User
+   │
+kubectl
+   │
+Kubernetes API Server
+   │
+Kubernetes Cluster
+```
+
+Install using Snap:
+
+```bash
+sudo snap install kubectl --classic
+```
+
+> **Note:** Running:
+>
+> ```bash
+> sudo apt install kubectl
+> ```
+>
+> often fails on Ubuntu because the Kubernetes APT repository is not configured by default. Using Snap or adding the official Kubernetes repository are the common installation methods.
+
+Verify the installation:
+
+```bash
+kubectl version --client
+```
+
+---
+
+# Step 2: Install Minikube
+
+Minikube creates a **single-node Kubernetes cluster** on your local machine.
+
+Download and install:
+
+```bash
+curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
+
+sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+```
+
+Verify the installation:
+
+```bash
+minikube version
+```
+
+---
+
+# Step 3: Start the Kubernetes Cluster
+
+Since Docker is installed on the system, Minikube can use Docker as its driver.
+
+Start the cluster:
+
+```bash
+minikube start --driver=docker
+```
+
+This command:
+
+* Creates a local Kubernetes cluster.
+* Starts the control plane.
+* Creates a worker node (single-node cluster).
+* Configures `kubectl` to communicate with the cluster automatically.
+
+---
+
+# Step 4: Verify the Cluster
+
+Check whether the node is running:
+
+```bash
+kubectl get nodes
+```
+
+Example output:
+
+```text
+NAME        STATUS   ROLES           AGE   VERSION
+minikube    Ready    control-plane   2m    v1.xx.x
+```
+
+If the node status is **Ready**, the cluster is running correctly.
+
+---
+
+# Kubernetes Blueprint
+
+```text
+                  User
+                    │
+                kubectl
+                    │
+            Kubernetes API Server
+                    │
+            Control Plane (Master)
+                    │
+          Schedules and manages Pods
+                    │
+               Worker Node
+                    │
+                  Pods
+                    │
+               Containers
+```
+
+---
+
+# Step 5: Create Kubernetes Resources
+
+Kubernetes resources are usually created using **YAML files**.
+
+A YAML file is a configuration file that describes the **desired state** of a Kubernetes resource.
+
+Examples of resources:
+
+* Pod
+* Deployment
+* Service
+* ConfigMap
+* Secret
+* Persistent Volume
+
+For your first example, you'll create a **Pod**.
+
+Create a working directory:
+
+```bash
+mkdir -p ~/k8s
+cd ~/k8s
+```
+
+Create a YAML file:
+
+```bash
+nano nginx-pod.yaml
+```
+
+---
+
+# Apply the YAML File
+
+Once the YAML file is ready, create the resource:
+
+```bash
+kubectl apply -f nginx-pod.yaml
+```
+
+Explanation:
+
+* `kubectl` → Kubernetes CLI
+* `apply` → Create or update a resource
+* `-f` → Read the configuration from a file
+* `nginx-pod.yaml` → YAML manifest
+
+---
+
+# Verify the Pod
+
+List all Pods:
+
+```bash
+kubectl get pods
+```
+
+Example output:
+
+```text
+NAME        READY   STATUS    RESTARTS   AGE
+nginx-pod   1/1     Running   0          20s
+```
+
+---
+
+# Basic Workflow
+
+```text
+Install kubectl
+        │
+Install Minikube
+        │
+Verify installations
+        │
+Start Minikube
+        │
+Verify node
+        │
+Create YAML file
+        │
+kubectl apply -f file.yaml
+        │
+kubectl get pods
+```
+
+---
+
+# Commands Summary
+
+Install kubectl:
+
+```bash
+sudo snap install kubectl --classic
+```
+
+Install Minikube: from minikube website
+
+```bash
+curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+```
+
+Check versions:
+
+```bash
+kubectl version --client
+minikube version
+```
+
+Start cluster:
+
+```bash
+minikube start --driver=docker
+```
+
+Check nodes:
+
+```bash
+kubectl get nodes
+```
+
+Create a YAML file:
+
+```bash
+nano nginx-pod.yaml
+```
+
+Create the resource:
+
+```bash
+kubectl apply -f nginx-pod.yaml
+```
+
+Verify Pods:
+
+```bash
+kubectl get pods
+```
+
+---
+
+# Key Points to Remember
+
+* **kubectl** is the client that communicates with the Kubernetes API server.
+* **Minikube** creates a local Kubernetes cluster.
+* **Docker** is used as the runtime/driver in this setup.
+* Kubernetes resources are defined in **YAML manifests**.
+* `kubectl apply -f` creates or updates resources from a YAML file.
+* `kubectl get nodes` verifies that the cluster is running.
+* `kubectl get pods` verifies that your Pod has been created successfully.
