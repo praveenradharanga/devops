@@ -18,3 +18,19 @@
 | Day 12 | Kubernetes troubleshooting (`describe`, `logs`, `events`, `exec`, common failures)                                                                                                                                                                                                | ⏳ Pending   |
 | Day 13 | Kubernetes interview questions and revision                                                                                                                                                                                                                                       | ⏳ Pending   |
 | Day 14 | Hands-on project and GitHub portfolio                                                                                                                                                                                                                                             | ⏳ Pending   |
+
+
+
+Pods
+   ↓
+ReplicaSets
+   ↓
+Deployments   ← Next
+   ↓
+Services
+   ↓
+ConfigMaps
+   ↓
+Secrets
+   ↓
+Volumes
