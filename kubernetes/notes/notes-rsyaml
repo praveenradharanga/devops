@@ -1,0 +1,21 @@
+ReplicaSet
+│
+├── apiVersion
+├── kind
+├── metadata
+│
+└── spec
+     │
+     ├── replicas
+     ├── selector
+     │     └── matchLabels
+     │
+     └── template
+           │
+           ├── metadata
+           │     └── labels
+           │
+           └── spec
+                 └── containers
+                       ├── name
+                       └── image
