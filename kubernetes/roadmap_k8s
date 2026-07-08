@@ -34,3 +34,22 @@ ConfigMaps
 Secrets
    ↓
 Volumes
+
+-------------------------------------
+Linux
+    ↓
+Git
+    ↓
+Docker ✅
+    ↓
+Kubernetes (Minikube) ← Continue here
+    ↓
+AWS (EC2, IAM, VPC, S3)
+    ↓
+EKS
+    ↓
+Terraform
+    ↓
+GitHub Actions / Jenkins
+    ↓
+Monitoring (Prometheus + Grafana)
