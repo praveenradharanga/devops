@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+ name: deploy-1
+spec:
+ replicas: 3
+ selector:
+  matchLabels:
+   app: nginx
+   env: prod
+ template:
+  metadata:
+   labels:
+    app: nginx
+    env: prod
+
+   annotations:
+    owner: Praveen
+    description: Learning kubernetese
+   
+  spec:
+   containers:
+    - name: deploy
+      image: nginx
+      ports:
+       - containerPort: 80
