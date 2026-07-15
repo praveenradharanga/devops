@@ -1,0 +1,61 @@
+                         
+
+                       Timeline of Resource Requests & Limits
+----------------------------------------------------------------------------------
+Create Deployment
+       │
+       ▼
+Scheduler
+       │
+       │ Looks only at:
+       │
+       ├── CPU Request
+       └── Memory Request
+       │
+       ▼
+Choose Worker Node
+       │
+       ▼
+Pod Starts
+       │
+       ▼
+Container Runs
+       │
+       │ Runtime enforces:
+       │
+       ├── CPU Limit
+       └── Memory Limit
+
+
+----------------------------------------------------------------------------
+ 
+                           Production
+
+                Users
+                  │
+                  ▼
+         AWS Load Balancer
+                  │
+                  ▼
+              Kubernetes
+                  │
+          ┌───────┴────────┐
+          ▼                ▼
+      Deployment         HPA
+          │                │
+          ▼                │
+     3 Pods → 6 Pods → 10 Pods
+          │
+          ▼
+      Scheduler
+          │
+          ▼
+Worker Nodes Full?
+     │            │
+    No           Yes
+     │            │
+     ▼            ▼
+ Run Pods   Cluster Autoscaler
+                  │
+                  ▼
+           Launch New EC2s
