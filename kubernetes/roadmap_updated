@@ -1,0 +1,158 @@
+# Kubernetes Learning Roadmap
+
+| Day    | Topic                                                                                                                                                                                                                                                                                         | Status      |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Day 1  | Kubernetes Introduction, Why Kubernetes, K8s abbreviation, Kubernetes Architecture (Blueprint), Minikube, kubectl, Installation, Starting a Cluster, `kubectl cluster-info`, `kubectl get nodes`, Creating the first Pod using YAML, `kubectl apply`, `kubectl get pods`, Namespaces (Basics) | ✅ Completed |
+| Day 2  | Pod YAML in detail (`apiVersion`, `kind`, `metadata`, `spec`, Containers, Image, Ports, Labels), Pod Lifecycle, `kubectl describe`, `kubectl logs`, `kubectl exec`, Deleting Pods                                                                                                             | ✅ Completed |
+| Day 3  | ReplicaSets, Why Pods alone aren't enough, Scaling Pods, Self-healing                                                                                                                                                                                                                         | ✅ Completed |
+| Day 4  | Deployments, Rolling Updates, Rollback, Scaling Deployments                                                                                                                                                                                                                                   | ✅ Completed |
+| Day 5  | Services (ClusterIP, NodePort, LoadBalancer), Service Discovery, CoreDNS                                                                                                                                                                                                                      | ✅ Completed |
+| Day 6  | Namespaces (Advanced), Labels, Selectors, Annotations                                                                                                                                                                                                                                         | ✅ Completed |
+| Day 7  | ConfigMaps and Secrets                                                                                                                                                                                                                                                                        | ✅ Completed |
+| Day 8  | Resource Requests & Limits, Liveness Probe, Readiness Probe, Startup Probe                                                                                                                                                                                                                    | ✅ Completed |
+| Day 9  | Volumes (`emptyDir`), Persistent Volumes (PV), Persistent Volume Claims (PVC)                                                                                                                                                                                                                 | ✅ Completed |
+| Day 10 | StorageClass                                                                                                                                                                                                                                                                                  | ⏳ Pending   |
+| Day 11 | StatefulSets                                                                                                                                                                                                                                                                                  | ⏳ Pending   |
+| Day 12 | DaemonSets                                                                                                                                                                                                                                                                                    | ⏳ Pending   |
+| Day 13 | Jobs & CronJobs                                                                                                                                                                                                                                                                               | ⏳ Pending   |
+| Day 14 | RBAC (Role-Based Access Control) & Service Accounts                                                                                                                                                                                                                                           | ⏳ Pending   |
+| Day 15 | Ingress & Ingress Controller                                                                                                                                                                                                                                                                  | ⏳ Pending   |
+| Day 16 | Helm Basics                                                                                                                                                                                                                                                                                   | ⏳ Pending   |
+| Day 17 | Horizontal Pod Autoscaler (HPA)                                                                                                                                                                                                                                                               | ⏳ Pending   |
+| Day 18 | Network Policies                                                                                                                                                                                                                                                                              | ⏳ Pending   |
+| Day 19 | Kubernetes Troubleshooting (`describe`, `logs`, `events`, `exec`, common failures)                                                                                                                                                                                                            | ⏳ Pending   |
+| Day 20 | Kubernetes Mini Project (Frontend + Backend + Database)                                                                                                                                                                                                                                       | ⏳ Pending   |
+| Day 21 | Kubernetes on AWS (Amazon EKS)                                                                                                                                                                                                                                                                | ⏳ Pending   |
+| Day 22 | Kubernetes Interview Questions & Complete Revision                                                                                                                                                                                                                                            | ⏳ Pending   |
+
+---
+
+# 📍 Kubernetes Learning Flow
+
+```
+Pods
+   ↓
+ReplicaSets
+   ↓
+Deployments
+   ↓
+Services
+   ↓
+Namespaces
+   ↓
+Labels & Selectors
+   ↓
+Annotations
+   ↓
+ConfigMaps
+   ↓
+Secrets
+   ↓
+Resource Requests & Limits
+   ↓
+Liveness Probe
+   ↓
+Readiness Probe
+   ↓
+Startup Probe
+   ↓
+Volumes (emptyDir)
+   ↓
+Persistent Volumes (PV)
+   ↓
+Persistent Volume Claims (PVC)
+   ↓
+StorageClass
+   ↓
+StatefulSets
+   ↓
+DaemonSets
+   ↓
+Jobs
+   ↓
+CronJobs
+   ↓
+RBAC
+   ↓
+Ingress
+   ↓
+Helm
+   ↓
+Horizontal Pod Autoscaler (HPA)
+   ↓
+Network Policies
+   ↓
+Kubernetes Mini Project
+   ↓
+Amazon EKS
+```
+
+---
+
+# 📍 Progress
+
+## ✅ Completed
+
+* Pods
+* ReplicaSets
+* Deployments
+* Services
+* Namespaces
+* Labels
+* Selectors
+* Annotations
+* ConfigMaps
+* Secrets
+* Resource Requests & Limits
+* Liveness Probe
+* Readiness Probe
+* Startup Probe
+* Volumes (`emptyDir`)
+* Persistent Volumes (PV)
+* Persistent Volume Claims (PVC)
+
+---
+
+## 🔜 Upcoming Topics
+
+* ⭐⭐⭐⭐⭐ StorageClass
+* ⭐⭐⭐⭐⭐ StatefulSets
+* DaemonSets
+* Jobs
+* CronJobs
+* RBAC
+* Service Accounts
+* Ingress & Ingress Controller
+* Helm
+* Horizontal Pod Autoscaler (HPA)
+* Network Policies
+* Kubernetes Troubleshooting
+* Kubernetes Mini Project
+* Kubernetes on AWS (Amazon EKS)
+* Kubernetes Interview Preparation
+
+---
+
+# 🚀 Complete DevOps Roadmap
+
+```
+Linux
+   ↓
+Git
+   ↓
+Docker ✅
+   ↓
+Kubernetes (Current Stage)
+   ↓
+GitHub Actions (CI/CD)
+   ↓
+Terraform
+   ↓
+AWS
+   ↓
+Monitoring (Prometheus & Grafana)
+   ↓
+Bash Scripting
+   ↓
+Python Basics
+```
