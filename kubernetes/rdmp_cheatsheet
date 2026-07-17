@@ -1,0 +1,140 @@
+                                              Kubernetes Resources - One Line Use Cases
+
+Pod            → Run a single application/container.
+
+ReplicaSet     → Maintain the desired number of identical Pods (Self-Healing).
+
+Deployment     → Deploy and manage stateless applications with Rolling Updates & Rollbacks.
+
+StatefulSet    → Databases & Stateful Applications (Stable Identity + Persistent Storage).
+
+DaemonSet      → Logging, Monitoring, Security & Node-level Agents (One Pod per Node).
+
+Job            → Run a task once and exit successfully.
+
+CronJob        → Run scheduled tasks (Backups, Reports, Cleanup).
+
+Service        → Provide stable networking and load balancing to Pods.
+
+ClusterIP      → Internal communication inside the Kubernetes cluster.
+
+NodePort       → Expose an application using <NodeIP>:<NodePort>.
+
+LoadBalancer   → Expose applications to the Internet using a Cloud Load Balancer.
+
+Ingress        → HTTP/HTTPS Routing for multiple Services using one IP.
+
+ConfigMap      → Store non-sensitive configuration.
+
+Secret         → Store sensitive information (Passwords, API Keys, Tokens).
+
+Namespace      → Logically isolate resources inside a cluster.
+
+PersistentVolume (PV)
+               → Actual storage provided to Kubernetes.
+
+PersistentVolumeClaim (PVC)
+               → Request storage from a Persistent Volume.
+
+StorageClass   → Dynamically provision storage.
+
+Volume (emptyDir)
+               → Temporary storage shared between containers in a Pod.
+
+Resource Requests
+               → Minimum CPU/Memory guaranteed for a container.
+
+Resource Limits
+               → Maximum CPU/Memory a container can use.
+
+Liveness Probe → Restart unhealthy containers.
+
+Readiness Probe
+               → Stop sending traffic until the application is ready.
+
+Startup Probe  → Give slow-starting applications extra startup time.
+
+RBAC           → Control who can access Kubernetes resources.
+
+ServiceAccount → Identity used by Pods to access the Kubernetes API.
+
+Horizontal Pod Autoscaler (HPA)
+               → Automatically increase/decrease Pods based on CPU/Memory.
+
+NetworkPolicy  → Control network traffic between Pods.
+
+---------------------------------------------------------------------------------------------------
+
+                               Easy Interview Revision
+
+Pod           → Run an Application
+
+ReplicaSet    → Maintain Pod Count
+
+Deployment    → Manage Stateless Apps
+
+StatefulSet   → Manage Databases
+
+DaemonSet     → Logging, Monitoring, Security
+
+Job           → One-time Task
+
+CronJob       → Scheduled Task
+
+Service       → Network Access
+
+Ingress       → HTTP/HTTPS Routing
+
+ConfigMap     → Configuration
+
+Secret        → Sensitive Data
+
+PV            → Actual Storage
+
+PVC           → Request Storage
+
+StorageClass  → Dynamic Storage
+
+HPA           → Auto Scale Pods
+
+RBAC          → Authorization
+
+ServiceAccount→ Pod Identity
+
+NetworkPolicy → Network Security
+
+-----------------------------------------------------------------------------------------
+The "Why" (Very Important for Interviews)
+
+Interviewers often ask "Why do we need this?"
+
+
+Pod            → To run containers.
+
+ReplicaSet     → Because Pods can die.
+
+Deployment     → Because ReplicaSets can't do rolling updates.
+
+StatefulSet    → Because databases need stable names and storage.
+
+DaemonSet      → Because every node needs logging/monitoring agents.
+
+Job            → Because some tasks should run only once.
+
+CronJob        → Because some tasks must run on a schedule.
+
+Service        → Because Pod IPs change.
+
+Ingress        → Because we don't want one LoadBalancer per Service.
+
+ConfigMap      → Because configuration should be separate from code.
+
+Secret         → Because passwords shouldn't be stored in images or ConfigMaps.
+
+PV/PVC         → Because Pods are ephemeral but data must persist.
+
+StorageClass   → Because storage should be created automatically.
+
+HPA            → Because traffic changes over time.
+
+RBAC           → Because not everyone should have cluster-admin access.

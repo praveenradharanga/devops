@@ -1,3 +1,29 @@
+       
+
+      Easy interview cheat sheet 
+Deployment  → Stateless Applications
+StatefulSet → Databases & Stateful Applications
+DaemonSet   → Logging, Monitoring, Security Agents
+Job         → One-time Tasks
+CronJob     → Scheduled Tasks
+Service     → Network Access to Pods
+Ingress     → HTTP/HTTPS Routing
+ConfigMap   → Configuration
+Secret      → Sensitive Data
+---------------------------------------------------------
+Pods – Run a single application container.
+ReplicaSets – Maintain the desired number of Pod replicas.
+Deployments – Manage stateless applications with rolling updates and rollbacks.
+StatefulSets – Databases and stateful applications (stable identity & persistent storage).
+DaemonSets – Logging, Monitoring, Security, and Node-level Agents.
+Jobs – One-time batch tasks.
+CronJobs – Scheduled or recurring tasks (like Linux cron).
+Services – Expose applications and provide stable networking.
+Ingress – HTTP/HTTPS routing to Services.
+ConfigMaps – Store non-sensitive configuration.
+Secrets – Store sensitive information (passwords, tokens, keys).
+--------------------------------------------------------------------
+
 # Kubernetes Learning Roadmap
 
 | Day    | Topic                                                                                                                                                                                                                                                                                         | Status      |
@@ -10,8 +36,8 @@
 | Day 6  | Namespaces (Advanced), Labels, Selectors, Annotations                                                                                                                                                                                                                                         | ✅ Completed |
 | Day 7  | ConfigMaps and Secrets                                                                                                                                                                                                                                                                        | ✅ Completed |
 | Day 8  | Resource Requests & Limits, Liveness Probe, Readiness Probe, Startup Probe                                                                                                                                                                                                                    | ✅ Completed |
-| Day 9  | Volumes (`emptyDir`), Persistent Volumes (PV), Persistent Volume Claims (PVC)                                                                                                                                                                                                                 | ✅ Completed |
-| Day 10 | StorageClass                                                                                                                                                                                                                                                                                  | ⏳ Pending   |
+| Day 9  | Volumes (`emptyDir`), Persistent Volumes (PV), Persistent Volume Claims (PVC) StorageClass (Static & Dynamic Provisions)                                                                                                                                                                      | ✅ Completed |                   >
+| Day 10 |                                                                                                                                                                                                                                                                                               | ⏳ Pending   |
 | Day 11 | StatefulSets                                                                                                                                                                                                                                                                                  | ⏳ Pending   |
 | Day 12 | DaemonSets                                                                                                                                                                                                                                                                                    | ⏳ Pending   |
 | Day 13 | Jobs & CronJobs                                                                                                                                                                                                                                                                               | ⏳ Pending   |
@@ -23,9 +49,56 @@
 | Day 19 | Kubernetes Troubleshooting (`describe`, `logs`, `events`, `exec`, common failures)                                                                                                                                                                                                            | ⏳ Pending   |
 | Day 20 | Kubernetes Mini Project (Frontend + Backend + Database)                                                                                                                                                                                                                                       | ⏳ Pending   |
 | Day 21 | Kubernetes on AWS (Amazon EKS)                                                                                                                                                                                                                                                                | ⏳ Pending   |
-| Day 22 | Kubernetes Interview Questions & Complete Revision                                                                                                                                                                                                                                            | ⏳ Pending   |
-
+| Day 22 | Kubernetes Interview Questions & Complete Revision  
 ---
+
+Core Kubernetes
+✅ Pods
+✅ ReplicaSets
+✅ Deployments
+✅ Rolling Updates
+✅ Rollbacks
+
+Interview Readiness: 100%
+
+Servocec (Networking)
+✅ ClusterIP
+✅ NodePort
+✅ LoadBalancer
+⏳ Ingress
+
+Interview Readiness: 80%
+
+Configuration
+✅ ConfigMaps
+✅ Secrets
+
+Interview Readiness: 100%
+
+Scheduling & Resources
+✅ Requests
+✅ Limits
+✅ OOMKilled
+✅ CPU Throttling
+
+Interview Readiness: 100%
+
+Health Checks
+✅ Liveness
+✅ Readiness
+✅ Startup
+
+Interview Readiness: 100%
+
+Storage
+✅ Volumes
+✅ emptyDir
+✅ PV
+✅ PVC
+✅ StorageClass
+
+Interview Readiness: 100%
+
 
 # 📍 Kubernetes Learning Flow
 

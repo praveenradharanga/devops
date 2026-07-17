@@ -1,0 +1,52 @@
+             Kubernetes Cluster
+
++----------------+   +----------------+   +----------------+
+| Node-1         |   | Node-2         |   | Node-3         |
+|----------------|   |----------------|   |----------------|
+| nginx-daemon   |   | nginx-daemon   |   | nginx-daemon   |
++----------------+   +----------------+   +----------------+
+
+
+🧠 Interview Cheat Sheet
+Deployment
+"I want 5 Pods."
+
+Kubernetes maintains 5 Pods, regardless of how many nodes exist (as long as there is enough capacity).
+
+DaemonSet
+"I want one Pod on every node."
+
+If there are:
+
+3 nodes → 3 Pods
+10 nodes → 10 Pods
+100 nodes → 100 Pods
+
+📋 DaemonSet Summary
+        Feature                 	DaemonSet
+------------------------------------------------------------------------ 
+ Purpose                        	One Pod per eligible node
+ Uses replicas?                  	❌ No
+ Automatically scales with nodes?	✅ Yes
+ Common uses                    	Logging, Monitoring, Security Agents
+ Examples                       	Fluent Bit, Prometheus Node Exporter, Datadog Agent, Falco
+
+-------------------------------------------------------------------------
+🎯 Interview Question
+
+What is a DaemonSet?
+
+A strong answer is:
+
+A DaemonSet ensures that one Pod runs on every eligible node in the cluster.
+It's commonly used for node-level services such as log collection, monitoring agents, and security agents. 
+When new nodes join the cluster, Kubernetes automatically schedules a DaemonSet Pod on them.
+
+🎯 Interview Question
+
+When should you use a DaemonSet instead of a Deployment?
+
+A good answer is:
+
+Use a DaemonSet when an application must run on every node in the cluster, such as log collectors, monitoring agents, or security agents. 
+Use a Deployment when you need a specific number of application replicas, regardless of how many nodes are in the cluster.
