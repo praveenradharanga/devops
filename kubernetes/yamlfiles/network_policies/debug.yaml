@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+#  namespace: np
+  labels:
+    app: debug
+spec:
+  containers:
+  - name: debug
+    image: debian
+    command: ["sleep", "3600"]
